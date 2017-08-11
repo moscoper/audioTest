@@ -59,9 +59,9 @@ static void decode(AVCodecContext *dec_ctx,AVPacket *packet,AVFrame *frame, FILE
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    const char *inputFileName ="/Users/cuifei/Documents/te.mov";
-//    const char *inputFileName ="/Users/cuifei/Downloads/win/2.mp3";
-    const char *outfileName = "/Users/cuifei/Documents/test.aac";
+//    const char *inputFileName ="/Users/cuifei/Documents/te.mov";
+    const char *inputFileName ="/Users/edz/Documents/testvideo/sintel.ts";
+    const char *outfileName = "/Users/edz/Documents/testvideo/test.aac";
     const AVCodec *codec;
     AVCodecContext *c = NULL;
     AVCodecContext *enCodecContext = NULL;
@@ -185,11 +185,8 @@ int main(int argc, const char * argv[]) {
     uint8_t *frame_buf = (uint8_t *)av_malloc(size);
     av_new_packet(&avPacket, size);
    
-    avFrame = av_frame_alloc();
-    avFrame->nb_samples = enCodecContext->frame_size;
-    avFrame->format = enCodecContext->sample_fmt;
     avformat_write_header(outputFormatContext, NULL);
-    avcodec_fill_audio_frame(avFrame, enCodecContext->channels, enCodecContext->sample_fmt, (const uint8_t*)frame_buf, size, 1);
+
     int count = 0;
     while (av_read_frame(avFormatContext, packet) == 0) {
         if (packet->stream_index == audioIndex) {
@@ -200,77 +197,29 @@ int main(int argc, const char * argv[]) {
                 exit(1);
             }
            
-//
-////            decode(c, packet, decoded_frame, outfile);
-//            data = packet->data;
-//            data_size = packet->size;
-//            printf("===len=%d\n",&data_size);
 //            packet->stream_index = audio_st->index;
 //            av_write_frame(outputFormatContext, packet);
-//            while (data_size >0){
-//                 fwrite(packet->data, sizeof(uint8_t), packet->size, outfile);
-//                data_size -= len;
-//                data += len;
-
-//            }
             
             len = avcodec_decode_audio4(c, decoded_frame, &got_frame, packet);
-            avFrame->data[0]=decoded_frame->data;
-//            int i;
-//            int ch;
-//            for (i =0; i< decoded_frame->nb_samples; i++) {
-//                for (ch = 0; ch < c->channels; ch++) {
-//                    avFrame->data[ch] = decoded_frame->data[ch];
-////                 fwrite(decoded_frame->data[ch]+data_size*i, 1, data_size, outfile);
-//                }
-//            }
-            avFrame->pts = count*100;
-            count++;
-//            av_frame_make_writable(avFrame);
-            ret = avcodec_send_frame(enCodecContext, avFrame);
-            
-            if (ret < 0) {
-                fprintf(stderr, "Error sending the frame to the encoder\n");
-                exit(ret);
-            }
-            
-            ret = avcodec_receive_packet(c, &avPacket);
-            avPacket.stream_index = audio_st->index;
-            ret = av_write_frame(outputFormatContext, &avPacket);
-            av_free_packet(&avPacket);
-
-            
-//            ret = avcodec_encode_audio2(enCodecContext, &avPacket, avFrame, &got_frame);
-//            if(ret < 0){
-//                printf("Failed to encode!\n");
-//                exit(1);
-//            }
-//            
-//            if (got_frame==1){
-//                printf("Succeed to encode 1 frame! \tsize:%5d\n",avPacket.size);
-//                avPacket.stream_index = audio_st->index;
-//                ret = av_write_frame(outputFormatContext, &avPacket);
-//                av_free_packet(&avPacket);
-//            }
-//                printf("===len=%d\n",&len);
-//             printf("===got_frame=%d\n",&got_frame);
-//                if (got_frame) {
-//                    int i;
-//                    int ch;
-//                    fprintf(stderr, "nb_samples=: %d",decoded_frame->nb_samples);
+                printf("===len=%d\n",&len);
+             printf("===got_frame=%d\n",&got_frame);
+                if (got_frame) {
+                    int i;
+                    int ch;
+                    fprintf(stderr, "nb_samples=: %d",decoded_frame->nb_samples);
             
                     
-//                    for (i =0; i< decoded_frame->nb_samples; i++) {
-//                       
-//
-//                        for (ch = 0; ch < c->channels; ch++) {
-//                            fwrite(decoded_frame->data[ch]+data_size*i, 1, data_size, outfile);
-//                        }
-//                    }
+                    for (i =0; i< decoded_frame->nb_samples; i++) {
+                       
+
+                        for (ch = 0; ch < c->channels; ch++) {
+                            fwrite(decoded_frame->data[ch]+data_size*i, 1, data_size, outfile);
+                        }
+                    }
                     
 
-//                }
-//              //            }
+                }
+
         }
     }
     av_write_trailer(outputFormatContext);

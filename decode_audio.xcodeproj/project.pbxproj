@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72BF2F201F3C2E7B00BE8D9F /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BF2F1F1F3C2E7B00BE8D9F /* libmp3lame.a */; };
+		72BF2F231F3C2EA500BE8D9F /* libtheora.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BF2F211F3C2EA500BE8D9F /* libtheora.a */; };
+		72BF2F241F3C2EA500BE8D9F /* libtheoradec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BF2F221F3C2EA500BE8D9F /* libtheoradec.a */; };
+		72BF2F271F3C2ECC00BE8D9F /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BF2F251F3C2ECC00BE8D9F /* libvorbis.a */; };
+		72BF2F281F3C2ECC00BE8D9F /* libvorbisenc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BF2F261F3C2ECC00BE8D9F /* libvorbisenc.a */; };
+		72BF2F2A1F3C2EE400BE8D9F /* libx265.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BF2F291F3C2EE400BE8D9F /* libx265.a */; };
+		72BF2F2B1F3C2EFF00BE8D9F /* libxvidcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C7B33D1F1A120600B2FF38 /* libxvidcore.a */; };
 		72C7B2F61F19FBC400B2FF38 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 72C7B2F51F19FBC400B2FF38 /* main.c */; };
 		72C7B3171F1A0DDA00B2FF38 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C7B2FD1F19FD5700B2FF38 /* libavcodec.a */; };
 		72C7B3181F1A0E6200B2FF38 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C7B3001F19FD5700B2FF38 /* libavformat.a */; };
@@ -46,6 +53,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		72BF2F1F1F3C2E7B00BE8D9F /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmp3lame.a; path = ../../../../../usr/local/Cellar/lame/3.99.5/lib/libmp3lame.a; sourceTree = "<group>"; };
+		72BF2F211F3C2EA500BE8D9F /* libtheora.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtheora.a; path = ../../../../../usr/local/Cellar/theora/1.1.1/lib/libtheora.a; sourceTree = "<group>"; };
+		72BF2F221F3C2EA500BE8D9F /* libtheoradec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtheoradec.a; path = ../../../../../usr/local/Cellar/theora/1.1.1/lib/libtheoradec.a; sourceTree = "<group>"; };
+		72BF2F251F3C2ECC00BE8D9F /* libvorbis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvorbis.a; path = ../../../../../usr/local/Cellar/libvorbis/1.3.5_1/lib/libvorbis.a; sourceTree = "<group>"; };
+		72BF2F261F3C2ECC00BE8D9F /* libvorbisenc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvorbisenc.a; path = ../../../../../usr/local/Cellar/libvorbis/1.3.5_1/lib/libvorbisenc.a; sourceTree = "<group>"; };
+		72BF2F291F3C2EE400BE8D9F /* libx265.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libx265.a; path = ../../../../../usr/local/Cellar/x265/2.5/lib/libx265.a; sourceTree = "<group>"; };
 		72C7B2F21F19FBC400B2FF38 /* decode_audio */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = decode_audio; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C7B2F51F19FBC400B2FF38 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		72C7B2FD1F19FD5700B2FF38 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../../../../../usr/local/lib/libavcodec.a; sourceTree = "<group>"; };
@@ -83,6 +96,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72BF2F2B1F3C2EFF00BE8D9F /* libxvidcore.a in Frameworks */,
+				72BF2F2A1F3C2EE400BE8D9F /* libx265.a in Frameworks */,
+				72BF2F271F3C2ECC00BE8D9F /* libvorbis.a in Frameworks */,
+				72BF2F281F3C2ECC00BE8D9F /* libvorbisenc.a in Frameworks */,
+				72BF2F231F3C2EA500BE8D9F /* libtheora.a in Frameworks */,
+				72BF2F241F3C2EA500BE8D9F /* libtheoradec.a in Frameworks */,
+				72BF2F201F3C2E7B00BE8D9F /* libmp3lame.a in Frameworks */,
 				72C7B3451F1A1BDD00B2FF38 /* libbz2.1.0.tbd in Frameworks */,
 				72C7B3431F1A1A9D00B2FF38 /* Security.framework in Frameworks */,
 				72C7B3441F1A1A9D00B2FF38 /* SecurityFoundation.framework in Frameworks */,
@@ -140,6 +160,12 @@
 		72C7B2FC1F19FD5700B2FF38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				72BF2F291F3C2EE400BE8D9F /* libx265.a */,
+				72BF2F251F3C2ECC00BE8D9F /* libvorbis.a */,
+				72BF2F261F3C2ECC00BE8D9F /* libvorbisenc.a */,
+				72BF2F211F3C2EA500BE8D9F /* libtheora.a */,
+				72BF2F221F3C2EA500BE8D9F /* libtheoradec.a */,
+				72BF2F1F1F3C2E7B00BE8D9F /* libmp3lame.a */,
 				72C7B3411F1A12B600B2FF38 /* VideoDecodeAcceleration.framework */,
 				72C7B33F1F1A121700B2FF38 /* AVKit.framework */,
 				72C7B33D1F1A120600B2FF38 /* libxvidcore.a */,
@@ -335,6 +361,10 @@
 					/usr/local/Cellar/opus/1.1.2/lib,
 					/usr/local/Cellar/libvpx/1.5.0/lib,
 					/usr/local/Cellar/xvid/1.3.4/lib,
+					/usr/local/Cellar/lame/3.99.5/lib,
+					/usr/local/Cellar/theora/1.1.1/lib,
+					/usr/local/Cellar/libvorbis/1.3.5_1/lib,
+					/usr/local/Cellar/x265/2.5/lib,
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,6 +382,10 @@
 					/usr/local/Cellar/opus/1.1.2/lib,
 					/usr/local/Cellar/libvpx/1.5.0/lib,
 					/usr/local/Cellar/xvid/1.3.4/lib,
+					/usr/local/Cellar/lame/3.99.5/lib,
+					/usr/local/Cellar/theora/1.1.1/lib,
+					/usr/local/Cellar/libvorbis/1.3.5_1/lib,
+					/usr/local/Cellar/x265/2.5/lib,
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -378,6 +412,7 @@
 				72C7B2FB1F19FBC400B2FF38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
